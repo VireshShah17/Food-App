@@ -1,0 +1,19 @@
+{% extends 'food/base.html' %} {% load static %} {% block title %} Delete-Item {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <img src="{{ item.item_image }}" alt="Image display error" class="card" height="200px" width="300px"> 
+        </div>
+        <div class="col-md-6">
+            <h1>{{ item.item_name }}</h1>
+            <h2>{{ item.item_desc }}</h2>
+            <h3>₹{{ item.item_price }}</h3>
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn-danger">Confirm Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'food/base.html' %} {% load static %} {% block title %} Edit-Item {% endblock %}
+{% block body %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Save</button>
+</form>
+{% endblock %}
